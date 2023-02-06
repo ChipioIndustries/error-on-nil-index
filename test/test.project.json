@@ -1,5 +1,5 @@
 {
-	"name": "errorOnNilIndex",
+	"name": "error-on-nil-index",
 	"tree": {
 		"$className": "DataModel",
 
