@@ -1,0 +1,6 @@
+{
+	"name": "errorOnNilIndex",
+	"tree": {
+		"$path": "src"
+	}
+}
