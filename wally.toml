@@ -1,5 +1,5 @@
 [package]
-name = "chipioindustries/errorOnNilIndex"
+name = "chipioindustries/error-on-nil-index"
 description = "Utility function for throwing errors when a nonexistent key is indexed in a table."
 version = "1.0.0"
 registry = "https://github.com/UpliftGames/wally-index"
