@@ -1,6 +1,7 @@
 local t = require(script.Parent.t)
 
-local function onNilIndex(key)
+local function onNilIndex(_self, key)
+	key = tostring(key)
 	error(("attempt to index nonexistent key: %s"):format(key), 2)
 end
 
