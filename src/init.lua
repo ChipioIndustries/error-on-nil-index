@@ -17,4 +17,15 @@ local function errorOnNilIndex(object)
 	return object
 end
 
-return errorOnNilIndex
+local function deepErrorOnNilIndex(object, isDeep)
+	if isDeep then
+		for _key, value in pairs(object) do
+			if typeof(value) == "table" then
+				deepErrorOnNilIndex(value, true)
+			end
+		end
+	end
+	return errorOnNilIndex(object)
+end
+
+return deepErrorOnNilIndex

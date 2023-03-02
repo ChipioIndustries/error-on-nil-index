@@ -40,5 +40,27 @@ return function()
 				errorOnNilIndex(Instance.new("ObjectValue"))
 			end).to.throw()
 		end)
+		it("should not lock subtables when deep locking is off", function()
+			local test = {
+				test2 = {}
+			}
+			errorOnNilIndex(test)
+			expect(function()
+				local _test = test.test2.test3
+			end).to.be.ok()
+		end)
+		it("should lock subtables with deep locking", function()
+			local test = {
+				test2 = {
+					test3 = {
+
+					}
+				}
+			}
+			errorOnNilIndex(test, true)
+			expect(function()
+				local _test = test.test2.test3.test4
+			end).to.throw()
+		end)
 	end)
 end
